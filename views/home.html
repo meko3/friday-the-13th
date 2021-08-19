@@ -1,0 +1,33 @@
+{{ define "home" }}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Friday the 13th</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+    <body>
+       <h1>Friday the 13th</h1>
+       <ul>
+           {{.}}
+       </ul>
+    </body>
+</html>
+<style>
+    body {
+        text-align: center;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+       line-height: 2;
+    }
+    ul:not(.year) > li {
+       border: 1px solid #2d2d2d;
+       margin: .5rem auto;
+       border-radius: 10px;
+       width: 300px;
+    }
+</style>
+{{ end }}
