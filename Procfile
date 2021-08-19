@@ -1,1 +1,0 @@
-web: bin/friday-the-13th
