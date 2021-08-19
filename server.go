@@ -5,6 +5,7 @@ import (
 	"time"
 	"html/template"
 	"io"
+	"os"
 	
 	"github.com/labstack/echo/v4"
 )
@@ -21,10 +22,14 @@ func main() {
 	t := &Template{
 		templates: template.Must(template.ParseGlob("views/*.html")),
 	}
+	port := ":5000"
+	if os.Getenv("PORT") != "" {
+		port = ":" + os.Getenv("PORT")
+	}
 	e := echo.New()
 	e.Renderer = t
 	e.GET("/", Home)
-	e.Logger.Fatal(e.Start(":1323"))
+	e.Logger.Fatal(e.Start(port))
 }
 
 func Home(c echo.Context) error {
