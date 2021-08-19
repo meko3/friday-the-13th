@@ -1,1 +1,1 @@
-web: bin/go-getting-started
+web: bin/friday-the-13th
